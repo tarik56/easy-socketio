@@ -1,5 +1,10 @@
-# easy-socketio
-Wrapper around python-socketio that handles a simple que and threading.
+## Easy SocketIO
+
+Easy SocketIO is a wrapper build around [python-socketio](https://github.com/miguelgrinberg/python-socketio) that handles a simple queue and threading.
+
+```
+pip install easy-socketio
+```
 
 Example with default configs:
 
@@ -16,15 +21,20 @@ socketio.send("Hello clients")
 
 ```
 
-Example with more detailed configuration:
-
+Example with more detailed configurations:
 
 ```python
 from easy_socketio import socketio
 
 # Threaded flag starts the server in a background thread, default is True
 
-socketio.start_server(host="127.0.0.1", port=5000, threaded=True, cors=True, static_files={'/': {'content_type': 'text/html'}})
+socketio.start_server(
+    host="127.0.0.1", 
+    port=5000, 
+    threaded=True, 
+    cors=True, 
+    static_files={'/': {'content_type': 'text/html'}}
+)
 
 # Wait for connections....
 
