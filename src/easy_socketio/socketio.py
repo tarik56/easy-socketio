@@ -31,6 +31,13 @@ def disconnect(sid):
 
 
 def send_message(msg="", event="message", to=None):
+    """
+    Sends a message to all or a specific client
+    :param msg: Message you want to send, can be a dict too
+    :param event: Socket event
+    :param to: SID of the connected user, if its set, it will only send to that specific client otherwise broadcast
+    :return: list.append
+    """
     return QUEUE.append(dict(
         msg=msg,
         event=event,
@@ -51,6 +58,15 @@ def run_wsgi(host="", port=5000):
 
 
 def start_server(host="", port=5000, threaded=True, cors=True, static_files=None):
+    """
+    Starts the SocketIO Server
+    :param host: Host IP, when left blank server runs at 0.0.0.0
+    :param port: Port
+    :param threaded: If True, it runs the eventlet server in a thread, otherwise in foreground
+    :param cors: Adds cors headers to the WSGIApp
+    :param static_files: Static Files
+    :return: Void
+    """
     global sio, app
     if not cors:
         sio = socketio.Server()

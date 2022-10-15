@@ -16,7 +16,7 @@ requirements = read_requirements("requirements.txt")
 
 setup(
     name='easy-socketio',
-    version='0.0.6',
+    version='0.0.7',
     author='Tarik Gün (tarik56)',
     url='https://github.com/tarik56/easy-socketio',
     description='A simple wrapper around python-socketio that handles a simple que and threading.',
