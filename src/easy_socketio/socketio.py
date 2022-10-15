@@ -76,8 +76,3 @@ def start_server(host="", port=5000, threaded=True, cors=True, static_files=None
     if not threaded:
         run_wsgi(host=host, port=port)
     threading.Thread(target=run_wsgi, args=(host, port, )).start()
-
-
-start_server(threaded=False)
-
-

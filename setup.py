@@ -1,4 +1,3 @@
-import pypandoc
 from setuptools import setup, find_packages
 
 
@@ -11,11 +10,12 @@ def read_file(file):
     with open(file) as f:
         return f.read()
 
+
 requirements = read_requirements("requirements.txt")
 
 setup(
     name='easy-socketio',
-    version='0.0.7',
+    version='0.0.8',
     author='Tarik Gün (tarik56)',
     url='https://github.com/tarik56/easy-socketio',
     description='A simple wrapper around python-socketio that handles a simple que and threading.',
