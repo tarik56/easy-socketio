@@ -1,3 +1,4 @@
+import pypandoc
 from setuptools import setup, find_packages
 
 
@@ -10,8 +11,6 @@ def read_file(file):
     with open(file) as f:
         return f.read()
 
-
-long_description = read_file("README.md")
 requirements = read_requirements("requirements.txt")
 
 setup(
@@ -20,8 +19,8 @@ setup(
     author='Tarik Gün (tarik56)',
     url='https://github.com/tarik56/easy-socketio',
     description='A simple wrapper around python-socketio that handles a simple que and threading.',
-    long_description_content_type="text/x-rst",
-    long_description=long_description,
+    long_description_content_type="text/markdown",
+    long_description="socketio.start_server()\nsocketio.send('Hello clients')\n\nSee Github Readme for a more and detailed guide.",
     license="MIT license",
     packages=['easy_socketio'],
     package_dir={'': 'src'},
